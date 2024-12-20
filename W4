@@ -1,97 +1,130 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Time Table</title>
+    <title>Registration Form</title>
     <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
         }
 
-        th, td {
-            border: 1px solid black;
-            padding: 8px;
+        h1 {
+            color: #2E8B57;
             text-align: center;
         }
 
-        th {
-            background-color: #4CAF50;
-            color: white;
-        }
-
-        tfoot {
-            background-color: #f2f2f2;
-        }
-
-        .lab {
-            background-color: #ffcccb; /* Highlight lab hours */
-        }
-
-        .elective {
-            background-color: #d1c4e9; /* Highlight elective hours */
-        }
-
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-
-        tr:nth-child(odd) {
+        table {
+            margin: 0 auto;
             background-color: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        td {
+            padding: 10px;
+            font-size: 1em;
+        }
+
+        input[type="text"], input[type="password"], input[type="email"], input[type="date"], select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+
+        input[type="radio"], input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        input[type="submit"], input[type="reset"] {
+            background-color: #2E8B57;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        input[type="submit"]:hover, input[type="reset"]:hover {
+            background-color: #45a049;
+        }
+
+        .form-title {
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .note {
+            color: #555;
+            font-size: 0.9em;
         }
     </style>
 </head>
 <body>
-    <h1>Class Time Table</h1>
-    <table>
-        <thead>
+    <h1>Registration Form</h1>
+    <form action="#" method="post">
+        <table>
             <tr>
-                <th>Day</th>
-                <th>9:00 - 10:00</th>
-                <th>10:00 - 11:00</th>
-                <th>11:00 - 12:00</th>
-                <th>12:00 - 1:00</th>
-                <th colspan="2">Lab Hours</th>
-                <th>3:00 - 4:00</th>
-                <th>4:00 - 5:00</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Monday</td>
-                <td>Math</td>
-                <td>Physics</td>
-                <td class="elective">Elective</td>
-                <td>Break</td>
-                <td class="lab" colspan="2">Physics Lab</td>
-                <td>English</td>
-                <td>Chemistry</td>
+                <td class="form-title">Full Name:</td>
+                <td><input type="text" name="fullname" placeholder="Enter your full name" required></td>
             </tr>
             <tr>
-                <td>Tuesday</td>
-                <td>Chemistry</td>
-                <td>English</td>
-                <td>Math</td>
-                <td>Break</td>
-                <td class="lab" colspan="2">Chemistry Lab</td>
-                <td>Physics</td>
-                <td class="elective">Elective</td>
+                <td class="form-title">Email:</td>
+                <td><input type="email" name="email" placeholder="Enter your email" required></td>
             </tr>
             <tr>
-                <td>Wednesday</td>
-                <td>English</td>
-                <td>Chemistry</td>
-                <td>Physics</td>
-                <td>Break</td>
-                <td class="lab" colspan="2">Computer Lab</td>
-                <td>Math</td>
-                <td>Sports</td>
+                <td class="form-title">Password:</td>
+                <td><input type="password" name="password" placeholder="Enter your password" required></td>
             </tr>
-        </tbody>
-        <tfoot>
             <tr>
-                <td colspan="9">Note: Highlighted cells represent lab and elective hours.</td>
+                <td class="form-title">Date of Birth:</td>
+                <td><input type="date" name="dob" required></td>
             </tr>
-        </tfoot>
-    </table>
+            <tr>
+                <td class="form-title">Gender:</td>
+                <td>
+                    <input type="radio" name="gender" value="male"> Male
+                    <input type="radio" name="gender" value="female"> Female
+                    <input type="radio" name="gender" value="other"> Other
+                </td>
+            </tr>
+            <tr>
+                <td class="form-title">Hobbies:</td>
+                <td>
+                    <input type="checkbox" name="hobbies" value="reading"> Reading
+                    <input type="checkbox" name="hobbies" value="traveling"> Traveling
+                    <input type="checkbox" name="hobbies" value="sports"> Sports
+                </td>
+            </tr>
+            <tr>
+                <td class="form-title">Country:</td>
+                <td>
+                    <select name="country">
+                        <option value="">Select your country</option>
+                        <option value="us">United States</option>
+                        <option value="uk">United Kingdom</option>
+                        <option value="in">India</option>
+                        <option value="au">Australia</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="form-title">Address:</td>
+                <td><textarea name="address" rows="3" placeholder="Enter your address"></textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <input type="submit" value="Register">
+                    <input type="reset" value="Reset">
+                </td>
+            </tr>
+        </table>
+    </form>
 </body>
 </html>
